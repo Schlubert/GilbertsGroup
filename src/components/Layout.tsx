@@ -1,7 +1,6 @@
-// components/Layout.tsx
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Menu, X, Mail, Phone, Linkedin } from 'lucide-react';
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X, Mail, Phone, Linkedin } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,11 +10,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Our Companies', path: '/companies' },
-    { name: 'Our Philosophy', path: '/philosophy' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Companies", path: "/companies" },
+    { name: "Our Philosophy", path: "/philosophy" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -30,8 +29,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <span className="text-2xl font-bold">GG</span>
               </div>
               <div className="hidden sm:block">
-                <div className="text-xl font-bold tracking-tight">The Gilbert's Group</div>
-                <div className="text-xs text-emerald-400 font-medium">Excellence in Every Venture</div>
+                <div className="text-xl font-bold tracking-tight">
+                  The Gilbert’s Group
+                </div>
+                <div className="text-xs text-emerald-400 font-medium">
+                  Excellence in Every Venture
+                </div>
               </div>
             </Link>
 
@@ -44,8 +47,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   className={({ isActive }) =>
                     `text-sm font-semibold transition-colors duration-300 ${
                       isActive
-                        ? 'text-emerald-400 border-b-2 border-emerald-400'
-                        : 'text-slate-300 hover:text-emerald-400'
+                        ? "text-emerald-400 border-b-2 border-emerald-400"
+                        : "text-slate-300 hover:text-emerald-400"
                     }`
                   }
                 >
@@ -54,10 +57,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               ))}
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-white focus:outline-none"
+              aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -74,8 +78,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   className={({ isActive }) =>
                     `block px-4 py-3 rounded-lg text-base font-semibold transition-colors duration-200 ${
                       isActive
-                        ? 'bg-emerald-600 text-white'
-                        : 'text-slate-300 hover:bg-slate-800'
+                        ? "bg-emerald-600 text-white"
+                        : "text-slate-300 hover:bg-slate-800"
                     }`
                   }
                 >
@@ -104,16 +108,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
                   <span className="text-xl font-bold">GG</span>
                 </div>
-                <div className="text-lg font-bold">The Gilbert's Group</div>
+                <div className="text-lg font-bold">The Gilbert’s Group</div>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed">
-                A family of companies dedicated to excellence in food, hospitality, and professional development.
+                A family of companies dedicated to excellence in food,
+                hospitality, and professional development.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-bold mb-4 text-emerald-400">Quick Links</h3>
+              <h3 className="text-lg font-bold mb-4 text-emerald-400">
+                Quick Links
+              </h3>
               <ul className="space-y-2">
                 {navigation.map((item) => (
                   <li key={item.path}>
@@ -130,23 +137,36 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-bold mb-4 text-emerald-400">Contact</h3>
+              <h3 className="text-lg font-bold mb-4 text-emerald-400">
+                Contact
+              </h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center space-x-2 text-slate-400">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:info@gilbertsgroup.nz" className="hover:text-emerald-400 transition-colors">
+                  <a
+                    href="mailto:info@gilbertsgroup.nz"
+                    className="hover:text-emerald-400 transition-colors"
+                  >
                     info@gilbertsgroup.nz
                   </a>
                 </li>
                 <li className="flex items-center space-x-2 text-slate-400">
                   <Phone className="w-4 h-4" />
-                  <a href="tel:0274859001" className="hover:text-emerald-400 transition-colors">
+                  <a
+                    href="tel:0274859001"
+                    className="hover:text-emerald-400 transition-colors"
+                  >
                     027 485 9001
                   </a>
                 </li>
                 <li className="flex items-center space-x-2 text-slate-400">
                   <Linkedin className="w-4 h-4" />
-                  <a href="https://linkedin.com/in/kevin-gilbert-nz" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
+                  <a
+                    href="https://linkedin.com/in/kevin-gilbert-nz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-emerald-400 transition-colors"
+                  >
                     LinkedIn
                   </a>
                 </li>
@@ -155,7 +175,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
 
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
-            <p>&copy; {new Date().getFullYear()} The Gilbert's Group. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} The Gilbert’s Group. All rights
+              reserved.
+            </p>
             <p className="mt-2">Dunedin, New Zealand</p>
           </div>
         </div>

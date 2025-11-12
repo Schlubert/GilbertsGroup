@@ -23,11 +23,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center">
-                <span className="text-2xl font-bold">GG</span>
-              </div>
+            {/* Logo */}<Link to="/" className="flex items-center space-x-3">
+              <img
+                src="/logo-gilberts-white.png"
+                alt="The Gilbert’s Group Logo"
+                className="h-10 w-auto"
+              />
               <div className="hidden sm:block">
                 <div className="text-xl font-bold tracking-tight">
                   The Gilbert’s Group
@@ -104,10 +105,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
             <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-bold">GG</span>
-                </div>
+                <div className="flex items-center space-x-3 mb-4">
+                  <img
+                    src="/logo-gilberts-white.png"
+                    alt="The Gilbert’s Group Logo"
+                    className="h-10 w-auto"
+                  />
                 <div className="text-lg font-bold">The Gilbert’s Group</div>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed">

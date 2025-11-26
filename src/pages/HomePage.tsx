@@ -1,317 +1,370 @@
-// pages/HomePage.tsx - Enhanced Version
+// pages/HomePage.tsx - SEO Enhanced Version
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, TrendingUp, GraduationCap, ArrowRight, ExternalLink, Award, Users, Target, ChevronRight } from 'lucide-react';
+import { ArrowRight, ExternalLink, Award, Users, Target,} from 'lucide-react';
 
 const HomePage: React.FC = () => {
   const companies = [
     {
       name: 'Appetite Journeys',
-      icon: <Compass className="w-12 h-12" />,
+      logo: '/images/logos/appetite-journeys-logo.svg',
+      useLogo: true,
       tagline: 'Culinary Adventures Through Switzerland',
-      description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by Swiss-born hosts.',
+      description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by Swiss-born hosts Kevin and Esther Gilbert.',
       keyFeatures: ['Small groups (max 12)', 'Expert Swiss guides', 'Authentic experiences'],
-      link: 'https://appetitejourneys.nz',
+      link: 'https://appetitejourneys.nz/',
+      image: '/images/companies/appetite-journeys-hero.jpg',
       isExternal: true,
-      status: 'Live',
+      status: 'Book Now',
       color: 'from-emerald-600 to-emerald-800',
       hoverColor: 'hover:from-emerald-700 hover:to-emerald-900'
     },
     {
       name: 'Elevate',
-      icon: <TrendingUp className="w-12 h-12" />,
-      tagline: 'Business Advisory & Governance',
-      description: 'Strategic guidance for businesses and boards, leveraging decades of operational experience and governance expertise.',
+      logo: '/images/logos/elevate-logo.svg',
+      useLogo: true,
+      tagline: 'Business Advisory & Governance Excellence',
+      description: 'Strategic guidance for businesses and boards in New Zealand and beyond, leveraging decades of operational experience and governance expertise.',
       keyFeatures: ['Board advisory', 'Strategic planning', 'Operational excellence'],
-      link: '/contact',
-      isExternal: false,
-      status: 'Enquire Now',
+      link: 'https://schlubert.github.io/Elevate/',
+      image: '/images/companies/elevate-hero.jpg',
+      isExternal: true,
+      status: 'Learn More',
       color: 'from-slate-700 to-slate-900',
       hoverColor: 'hover:from-slate-800 hover:to-black'
     },
     {
       name: 'The F&B Apprentice',
-      icon: <GraduationCap className="w-12 h-12" />,
-      tagline: 'Professional Development & Training',
-      description: 'Comprehensive training programs for food and beverage professionals, building the next generation of hospitality leaders.',
+      logo: '/images/logos/fb-apprentice-logo.svg',
+      useLogo: true,
+      tagline: 'Food & Beverage Professional Development',
+      description: 'Comprehensive training programs for hospitality professionals in New Zealand, building the next generation of food and beverage leaders.',
       keyFeatures: ['Hands-on training', 'Industry mentorship', 'Career pathways'],
-      link: '/contact',
-      isExternal: false,
-      status: 'Enquire Now',
+      link: 'https://schlubert.github.io/FBApprentice/',
+      image: '/images/companies/fb-apprentice-hero.jpg',
+      isExternal: true,
+      status: 'Launching Soon',
       color: 'from-blue-700 to-blue-900',
       hoverColor: 'hover:from-blue-800 hover:to-blue-950'
     }
   ];
 
   const stats = [
-    { number: '30+', label: 'Years Experience' },
-    { number: '3', label: 'Business Ventures' },
-    { number: '100%', label: 'Committed to Excellence' }
+    { number: '50+', label: 'Years Combined Experience', schema: 'years' },
+    { number: '3', label: 'Business Ventures', schema: 'ventures' },
+    { number: '2', label: 'Countries Served', schema: 'countries' }
+  ];
+
+  const trustIndicators = [
+    {
+      icon: <Award className="w-8 h-8 text-emerald-600" />,
+      title: 'Industry Leadership',
+      description: 'International recognition across culinary tourism, business advisory, and hospitality training in New Zealand'
+    },
+    {
+      icon: <Users className="w-8 h-8 text-emerald-600" />,
+      title: 'Client-Centered Approach',
+      description: 'Building lasting relationships with businesses, tourists, and hospitality professionals throughout the world'
+    },
+    {
+      icon: <Target className="w-8 h-8 text-emerald-600" />,
+      title: 'Proven Track Record',
+      description: 'Decades of success in food service, governance, and professional development'
+    }
   ];
 
   return (
-    <div className="space-y-0">
-      {/* Hero Section - Refined */}
-      <section className="relative h-[75vh] -mx-4 sm:-mx-6 lg:-mx-8 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2djhoOHYtOGgtOHptLTQtNHY4aC04di04aDh6bTAtMTJ2OGgtOFYwaDh6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
-        
-        <div className="relative h-full flex items-center justify-center px-4">
-          <div className="text-center text-white max-w-5xl">
-            {/* Logo */}
-            <div className="flex justify-center mb-8">
-              <img 
-                src="/logo-gilberts.png" 
-                alt="The Gilbert's Group Logo" 
-                className="h-24 md:h-32 w-auto drop-shadow-2xl"
-              />
+    <>
+      {/* Schema.org structured data for SEO */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "The Gilbert's Group",
+          "url": "https://www.gilbertsgroup.nz",
+          "logo": "https://www.gilbertsgroup.nz/images/gilberts-group-logo.svg",
+          "description": "The Gilbert's Group is a family of companies in New Zealand specializing in culinary tourism, business advisory, and professional development. Led by Kevin and Esther Gilbert in Dunedin.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dunedin",
+            "addressRegion": "Otago",
+            "addressCountry": "NZ"
+          },
+          "founder": [
+            {
+              "@type": "Person",
+              "name": "Kevin Gilbert",
+              "jobTitle": "Founder & Director"
+            },
+            {
+              "@type": "Person",
+              "name": "Esther Gilbert",
+              "jobTitle": "Co-Founder & Director"
+            }
+          ],
+          "owns": [
+            {
+              "@type": "Organization",
+              "name": "Appetite Journeys",
+              "url": "https://appetitejourneys.nz"
+            },
+            {
+              "@type": "Organization",
+              "name": "Elevate Business Advisory"
+            },
+            {
+              "@type": "Organization",
+              "name": "The F&B Apprentice"
+            }
+          ]
+        })}
+      </script>
+
+      <div className="space-y-0">
+        {/* Hero Section */}
+        <section className="relative h-[45vh] -mx-4 sm:-mx-6 lg:-mx-8 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
+         <div className="relative h-full flex items-center justify-center px-4">
+            <div className="text-center text-white max-w-5xl">
+              {/* Logo/Icon placement */}
+                <div className="flex flex-col items-center">
+                <img
+                  src="/images/GilbertsGroupLogo.svg"
+                  alt="Gilbert's Group Logo"
+                  className="max-w-[320px] w-full my-8"
+                />
+                </div>           
+              <p className="text-xl md:text-2xl mb-10 text-slate-200 max-w-4xl mx-auto leading-relaxed">
+                A Dunedin-based family of companies bringing decades of expertise in culinary tourism, 
+                business advisory, and hospitality professional development.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Companies Section - Enhanced with images */}
+        <section id="companies" className="py-8 px-2 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-slate-900 mb-4">
+                Our New Zealand Companies
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Three distinct ventures based in Dunedin, each a leader in its field, united by our commitment to excellence and service
+              </p>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              The Gilbert's Group
-            </h1>
-            <p className="text-2xl md:text-3xl mb-4 text-emerald-400 font-semibold">
-              Excellence Across Industries
-            </p>
-            <p className="text-xl md:text-2xl mb-10 text-slate-200 max-w-4xl mx-auto leading-relaxed">
-              A family of companies bringing decades of expertise in culinary tourism, 
-              business advisory, and professional development.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {companies.map((company, index) => (
+                <article
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200"
+                  itemScope
+                  itemType="https://schema.org/Organization"
+                >
+                  {/* Image Header with Logo Overlay */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={company.image}
+                      alt={`${company.name} - ${company.tagline}`}
+                      className="w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      itemProp="image"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    {/* Status Badge */}
+                    <div className="absolute top-4 right-4">
+                      <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-slate-900">
+                        {company.status}
+                      </span>
+                    </div>
+                  </div>
 
-            {/* Stats Bar */}
-            <div className="flex justify-center gap-12 mb-10 flex-wrap">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-emerald-400 mb-1">{stat.number}</div>
-                  <div className="text-sm text-slate-300 uppercase tracking-wide">{stat.label}</div>
-                </div>
+                  {/* Card Body */}
+                  <div className="p-8">
+                    {company.useLogo ? (
+                      <img
+                        src={company.logo}
+                        alt={company.name}
+                        className="h-24 w-auto mx-auto"
+                      />
+                    ) : (
+                      <h2>{company.name}</h2>
+                    )}
+                    <p className="text-sm text-emerald-600 font-medium mb-4">
+                      {company.tagline}
+                    </p>
+                    <p className="text-slate-700 leading-relaxed mb-6" itemProp="description">
+                      {company.description}
+                    </p>
+                    
+                    {/* Key Features */}
+                    <ul className="space-y-2 mb-6">
+                      {company.keyFeatures.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-slate-600">
+                          <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full mr-3 flex-shrink-0"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA Button */}
+                    <a
+                      href={company.link}
+                      target={company.isExternal ? '_blank' : undefined}
+                      rel={company.isExternal ? 'noopener noreferrer' : undefined}
+                      className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${company.color} ${company.hoverColor} text-white px-6 py-4 rounded-lg font-semibold transition-all transform group-hover:scale-105 shadow-lg`}
+                      itemProp="url"
+                      aria-label={`Visit ${company.name} website`}
+                    >
+                      {company.status === 'Book Now' ? 'Visit & Book' : company.status === 'Launching Soon' ? 'Preview Site' : 'Visit Website'}
+                      <ExternalLink className="ml-2 w-5 h-5" />
+                    </a>
+                  </div>
+                </article>
               ))}
             </div>
 
-            <div className="flex gap-4 justify-center flex-wrap">
-              <a
-                href="#companies"
-                className="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl"
-              >
-                Explore Our Companies
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </a>
+            {/* Learn More Link */}
+            <div className="text-center mt-12">
               <Link
-                to="/about"
-                className="inline-flex items-center bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+                to="/companies"
+                className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold text-lg group"
               >
-                Our Story
+                Explore Full Company Details
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronRight className="w-6 h-6 text-white/50 rotate-90" />
-        </div>
-      </section>
-
-      {/* Companies Section - Card Focus */}
-      <section id="companies" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-slate-900 mb-4">Our Companies</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Three distinct ventures, each a leader in its field, united by our commitment to excellence
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {companies.map((company, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200"
-              >
-                {/* Card Header with Status Badge */}
-                <div className={`bg-gradient-to-br ${company.color} p-8 text-white relative`}>
-                  <div className="absolute top-4 right-4">
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${company.isExternal ? 'bg-white/20 backdrop-blur-sm' : 'bg-white/10'}`}>
-                      {company.status}
-                    </span>
+        {/* Trust Indicators */}
+        <section className="py-4 bg-slate-50" aria-label="Why choose Gilbert's Group">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {trustIndicators.map((indicator, index) => (
+                <div key={index} className="p-6">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    {indicator.icon}
                   </div>
-                  
-                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    {company.icon}
-                  </div>
-                  <h3 className="text-3xl font-bold mb-2">{company.name}</h3>
-                  <p className="text-sm opacity-90 font-medium">{company.tagline}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{indicator.title}</h3>
+                  <p className="text-slate-600">{indicator.description}</p>
                 </div>
-
-                {/* Card Body */}
-                <div className="p-8">
-                  <p className="text-slate-700 leading-relaxed mb-6">{company.description}</p>
-                  
-                  {/* Key Features */}
-                  <div className="space-y-2 mb-6">
-                    {company.keyFeatures.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-slate-600">
-                        <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full mr-3"></div>
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA Button */}
-                  <a
-                    href={company.link}
-                    target={company.isExternal ? '_blank' : undefined}
-                    rel={company.isExternal ? 'noopener noreferrer' : undefined}
-                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${company.color} ${company.hoverColor} text-white px-6 py-4 rounded-lg font-semibold transition-all transform group-hover:scale-105 shadow-lg`}
-                  >
-                    {company.isExternal ? 'Visit Website' : 'Get In Touch'}
-                    {company.isExternal ? (
-                      <ExternalLink className="ml-2 w-5 h-5" />
-                    ) : (
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    )}
-                  </a>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+        </section>
 
-          {/* Learn More Link */}
-          <div className="text-center mt-12">
+        {/* Leadership Preview - Enhanced for SEO */}
+        <section className="py-8 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                  Meet Kevin & Esther Gilbert
+                </h2>
+                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                  Based in Dunedin, New Zealand, Kevin and Esther Gilbert bring complementary expertise spanning continents and industries. Their combined experience in food, hospitality, business leadership, and governance creates a unique foundation for excellence across all three companies.
+                </p>
+                <ul className="space-y-3 mb-8" role="list">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span className="text-slate-700">50+ years combined experience in food and hospitality management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span className="text-slate-700">Proven governance and board advisory experience in New Zealand</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span className="text-slate-700">International industry recognition and certifications</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span className="text-slate-700">Technical expertise combined with decades of lived experience </span>
+                  </li>
+                </ul>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                >
+                  Learn More About the Founders
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                <figure className="bg-slate-100 rounded-xl p-6 text-center">
+                  <img 
+                    src="/images/team/kevin.jpg" 
+                    alt="Kevin Gilbert - Founder and Director of The Gilbert's Group"
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <h3 className="text-xl font-bold text-slate-900 mb-1">Kevin Gilbert</h3>
+                    <p className="text-sm text-slate-600">Founder & Director</p>
+                  </figcaption>
+                </figure>
+                <figure className="bg-slate-100 rounded-xl p-6 text-center">
+                  <img 
+                    src="/images/team/esther.jpg" 
+                    alt="Esther Gilbert - Co-Founder and Director of The Gilbert's Group"
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <h3 className="text-xl font-bold text-slate-900 mb-1">Esther Gilbert</h3>
+                    <p className="text-sm text-slate-600">Co-Founder & Director</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Philosophy Teaser */}
+        <section className="py-16 bg-gradient-to-r from-slate-900 to-emerald-900 text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl font-bold mb-6">Our Business Philosophy</h2>
+            <blockquote className="text-xl leading-relaxed mb-8 opacity-95">
+              <p>"Excellence isn't an act, it's a habit. We believe in doing things right, building lasting relationships, 
+              and creating value that extends beyond any single transaction."</p>
+            </blockquote>
             <Link
-              to="/companies"
-              className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold text-lg group"
+              to="/philosophy"
+              className="inline-flex items-center bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
             >
-              Explore Full Company Details
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Indicators */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Proven Excellence</h3>
-              <p className="text-slate-600">International recognition and industry leadership across all ventures</p>
-            </div>
-            <div className="p-6">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">People-Focused</h3>
-              <p className="text-slate-600">Building lasting relationships and creating meaningful impact</p>
-            </div>
-            <div className="p-6">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Results-Driven</h3>
-              <p className="text-slate-600">Decades of success creating value for clients and communities</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Preview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">Meet the Founders</h2>
-              <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Kevin and Esther Gilbert bring complementary expertise spanning continents and industries. Their combined experience in food, hospitality, business leadership, and governance creates a unique foundation for excellence.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2"></div>
-                  <span className="text-slate-700">30+ years in food and hospitality</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2"></div>
-                  <span className="text-slate-700">Proven governance and board experience</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2"></div>
-                  <span className="text-slate-700">International industry recognition</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2"></div>
-                  <span className="text-slate-700">Swiss heritage and local expertise</span>
-                </li>
-              </ul>
-              <Link
-                to="/about"
-                className="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
-              >
-                Learn More About Us
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-slate-100 rounded-xl p-6 text-center">
-                <div className="w-32 h-32 bg-slate-300 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">Kevin Gilbert</h3>
-                <p className="text-sm text-slate-600">Founder & Director</p>
-              </div>
-              <div className="bg-slate-100 rounded-xl p-6 text-center">
-                <div className="w-32 h-32 bg-slate-300 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">Esther Gilbert</h3>
-                <p className="text-sm text-slate-600">Co-Founder & Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy Teaser */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-emerald-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Our Philosophy</h2>
-          <p className="text-xl leading-relaxed mb-8 opacity-95">
-            "Excellence isn't an act, it's a habit. We believe in doing things right, building lasting relationships, 
-            and creating value that extends beyond any single transaction."
-          </p>
-          <Link
-            to="/philosophy"
-            className="inline-flex items-center bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
-          >
-            Explore Our Values
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready to Connect?</h2>
-          <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-            Whether you're interested in culinary adventures, business guidance, or professional development, 
-            we're here to help you achieve your goals.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link
-              to="/contact"
-              className="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
-            >
-              Get In Touch
+              Explore Our Values
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
-            <Link
-              to="/companies"
-              className="inline-flex items-center bg-slate-100 hover:bg-slate-200 text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all"
-            >
-              View All Companies
-            </Link>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="py-10 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready to Connect?</h2>
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+              Whether you're interested in Swiss culinary adventures, business governance guidance, or professional development in hospitality, we're here to help you achieve your goals.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link
+                to="/contact"
+                className="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
+              >
+                Get In Touch
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+              <Link
+                to="/companies"
+                className="inline-flex items-center bg-slate-100 hover:bg-slate-200 text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+              >
+                View All Companies
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

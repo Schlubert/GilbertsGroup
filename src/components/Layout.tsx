@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Mail, Phone, Linkedin } from "lucide-react";
 
 interface LayoutProps {
@@ -8,6 +8,20 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show logo after scrolling 400px (adjust this value as needed)
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: "Home", path: "/" },
@@ -19,27 +33,29 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      {/* Header */}
+      {/* Header - always visible, logo conditionally shown */}
       <header className="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}<Link to="/" className="flex items-center space-x-3">
-              <img
-                src="/logo-gilberts-white.png"
-                alt="The Gilbert’s Group Logo"
-                className="h-10 w-auto"
-              />
-              <div className="hidden sm:block">
-                <div className="text-xl font-bold tracking-tight">
-                  The Gilbert’s Group
+          <div className="flex items-center justify-between h-30">
+            {/* Logo - only show on non-homepage OR when scrolled on homepage */}
+            <Link 
+              to="/" 
+              className={`flex items-center space-x-4 transition-all duration-300 ${
+                isHomePage && !isScrolled 
+                  ? 'opacity-0 pointer-events-none' 
+                  : 'opacity-100'
+              }`}
+            >
+              <div className="flex flex-col items-start">
+                <img
+                  src="/images/GilbertsGroupLogo.svg"
+                  alt="Gilbert's Group Logo"
+                  className="max-w-[180px] w-full"
+                />
                 </div>
-                <div className="text-xs text-emerald-400 font-medium">
-                  Excellence in Every Venture
-                </div>
-              </div>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - always visible */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
                 <NavLink
@@ -58,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - always visible */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-white focus:outline-none"
@@ -94,7 +110,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       {/* Main Content */}
       <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
           {children}
         </div>
       </main>
@@ -105,15 +121,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
             <div>
-                <div className="flex items-center space-x-3 mb-4">
-                  <img
-                    src="/logo-gilberts-white.png"
-                    alt="The Gilbert’s Group Logo"
-                    className="h-10 w-auto"
-                  />
-                <div className="text-lg font-bold">The Gilbert’s Group</div>
+              <div className="flex flex-col items-start mb-4">
+                <div className="text-xs text-slate-400 font-medium tracking-wide uppercase mb-1">
+                  The
+                </div>
+                <img
+                  src="/images/gilberts-group-logo-white.svg"
+                  alt="Gilbert's Group Logo"
+                  className="h-10 w-auto mb-1"
+                />
+                <div className="text-xs text-emerald-400 font-medium">
+                  Excellence in Every Venture
+                </div>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-slate-400 text-sm leading-relaxed mt-4">
                 A family of companies dedicated to excellence in food,
                 hospitality, and professional development.
               </p>
@@ -145,7 +166,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center space-x-2 text-slate-400">
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 flex-shrink-0" />
                   <a
                     href="mailto:info@gilbertsgroup.nz"
                     className="hover:text-emerald-400 transition-colors"
@@ -154,16 +175,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   </a>
                 </li>
                 <li className="flex items-center space-x-2 text-slate-400">
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4 flex-shrink-0" />
                   <a
-                    href="tel:0274859001"
+                    href="tel:+64274859001"
                     className="hover:text-emerald-400 transition-colors"
                   >
-                    027 485 9001
+                    +64 27 485 9001
                   </a>
                 </li>
                 <li className="flex items-center space-x-2 text-slate-400">
-                  <Linkedin className="w-4 h-4" />
+                  <Linkedin className="w-4 h-4 flex-shrink-0" />
                   <a
                     href="https://linkedin.com/in/kevin-gilbert-nz"
                     target="_blank"
@@ -179,7 +200,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
             <p>
-              &copy; {new Date().getFullYear()} The Gilbert’s Group. All rights
+              &copy; {new Date().getFullYear()} The Gilbert's Group. All rights
               reserved.
             </p>
             <p className="mt-2">Dunedin, New Zealand</p>

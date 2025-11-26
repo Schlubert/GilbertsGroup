@@ -9,7 +9,8 @@ const OurCompaniesPage: React.FC = () => {
       icon: <Compass className="w-12 h-12" />,
       tagline: 'Culinary Adventures Through Switzerland',
       description: 'Appetite Journeys offers intimate, small-group food and wine tours through Switzerland, led by Swiss-born hosts with deep local knowledge and culinary expertise.',
-      color: 'from-alpine-green to-emerald-700',
+      image: '/images/companies/appetite-journeys-hero.jpg',
+      overlayOpacity: 'bg-black/40',
       features: [
         'Maximum 12 guests per tour for personalized experiences',
         'Expert guides born and raised in Switzerland',
@@ -17,13 +18,6 @@ const OurCompaniesPage: React.FC = () => {
         'Hands-on culinary experiences and tastings',
         'UNESCO World Heritage sites and scenic train journeys',
         'Carefully curated accommodations and dining'
-      ],
-      services: [
-        'Multi-day culinary tours',
-        'Chocolate and cheese factory visits',
-        'Vineyard tours and wine tastings',
-        'Traditional Swiss cuisine experiences',
-        'Alpine adventures and cultural immersion'
       ],
       link: 'https://appetitejourneys.nz',
       externalLink: true
@@ -33,57 +27,48 @@ const OurCompaniesPage: React.FC = () => {
       icon: <TrendingUp className="w-12 h-12" />,
       tagline: 'Business Advisory & Governance Excellence',
       description: 'Elevate provides strategic business advisory and governance expertise, drawing on decades of operational experience and proven leadership across industries.',
-      color: 'from-slate-700 to-slate-900',
+      image: '/images/companies/elevate-hero.jpg',
+      overlayOpacity: 'bg-black/45',
       features: [
         '20+ years operational business experience',
-        '9 years board-level governance expertise',
+        '25+ years combined board-level governance expertise',
         'Institute of Directors member',
         'Public and private sector experience',
         'Financial acumen and strategic planning',
-        'Hands-on, practical approach'
-      ],
-      services: [
-        'Board advisory and development',
+        'Hands-on, practical approach',
         'Strategic business planning',
         'Governance training and support',
         'Operational efficiency consulting',
-        'Financial management guidance',
-        'Succession planning'
+        'Financial management guidance'
       ],
-      link: '#',
-      externalLink: false
+      link: 'https://schlubert.github.io/Elevate/',
+      externalLink: true
     },
     {
       name: 'The F&B Apprentice',
       icon: <GraduationCap className="w-12 h-12" />,
       tagline: 'Professional Development in Food & Beverage',
-      description: 'The F&B Apprentice delivers comprehensive training and mentorship programs for aspiring and current food and beverage professionals, building the next generation of industry leaders.',
-      color: 'from-blue-700 to-blue-900',
+      description: 'The F&B Apprentice is about building pratical and useful skills to aspiring and current food and beverage professionals, building the next generation of industry leaders, and helpgin to upskill the leaders/owners/managers of today.',
+      image: '/images/companies/fb-apprentice-hero.jpg',
+      overlayOpacity: 'bg-black/40',
       features: [
-        'Hands-on training from industry experts',
+        'Online training videos and resources',
         'Real-world operational experience',
         'Mentorship from qualified professionals',
         'Industry-recognized qualifications',
         'Career pathway guidance',
-        'Ongoing professional support'
+        'Ongoing professional support',
+        'Industry assessment and moderation'
       ],
-      services: [
-        'Apprenticeship programs',
-        'Professional development workshops',
-        'Industry assessment and moderation',
-        'Career mentorship',
-        'Skills training and certification',
-        'Industry placement support'
-      ],
-      link: '#',
-      externalLink: false
+      link: 'https://schlubert.github.io/FBApprentice/',
+      externalLink: true
     }
   ];
 
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative h-[50vh] -mx-4 sm:-mx-6 lg:-mx-8 bg-gradient-to-br from-slate-900 via-emerald-800 to-slate-900">
+      <section className="relative h-[30vh] -mx-4 sm:-mx-6 lg:-mx-8 bg-gradient-to-br from-slate-900 via-emerald-800 to-slate-900">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative h-full flex items-center justify-center px-4">
           <div className="text-center text-white max-w-4xl">
@@ -105,25 +90,38 @@ const OurCompaniesPage: React.FC = () => {
       {/* Company Details */}
       <section className="space-y-16">
         {companies.map((company, index) => (
-          <div key={index} className={`${index % 2 === 1 ? 'bg-slate-50' : ''} -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12`}>
+          <div key={index} className={`${index % 2 === 1 ? 'bg-slate-50' : ''} -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-2`}>
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                {/* Company Header Card */}
-                <div className={`bg-gradient-to-br ${company.color} text-white rounded-2xl p-8 shadow-2xl`}>
-                  <div className="mb-6">{company.icon}</div>
-                  <h2 className="text-4xl font-bold mb-3">{company.name}</h2>
-                  <p className="text-lg opacity-90 mb-6">{company.tagline}</p>
-                  <p className="text-base leading-relaxed opacity-95 mb-8">{company.description}</p>
+                {/* Company Header Card with Image Background */}
+                <div className="relative rounded-2xl shadow-2xl overflow-hidden">
+                  {/* Background Image */}
+                  <img 
+                    src={company.image}
+                    alt={`${company.name} background`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                   
-                  <a
-                    href={company.link}
-                    className="inline-flex items-center bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
-                    target={company.externalLink ? '_blank' : undefined}
-                    rel={company.externalLink ? 'noopener noreferrer' : undefined}
-                  >
-                    {company.externalLink ? 'Visit Website' : 'Coming Soon'}
-                    {company.externalLink && <ExternalLink className="ml-2 w-4 h-4" />}
-                  </a>
+                  {/* Adjustable Overlay Mask */}
+                  <div className={`absolute inset-0 ${company.overlayOpacity}`}></div>
+                  
+                  {/* Content on top */}
+                  <div className="relative text-white p-8">
+                    <div className="mb-6">{company.icon}</div>
+                    <h2 className="text-4xl font-bold mb-3">{company.name}</h2>
+                    <p className="text-lg opacity-90 mb-6">{company.tagline}</p>
+                    <p className="text-base leading-relaxed opacity-95 mb-8">{company.description}</p>
+                    
+                    <a
+                      href={company.link}
+                      className="inline-flex items-center bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+                      target={company.externalLink ? '_blank' : undefined}
+                      rel={company.externalLink ? 'noopener noreferrer' : undefined}
+                    >
+                      {company.externalLink ? 'Visit Website' : 'Coming Soon'}
+                      {company.externalLink && <ExternalLink className="ml-2 w-4 h-4" />}
+                    </a>
+                  </div>
                 </div>
 
                 {/* Features & Services */}
@@ -141,18 +139,6 @@ const OurCompaniesPage: React.FC = () => {
                     </ul>
                   </div>
 
-                  {/* Services */}
-                  <div className="bg-white rounded-xl p-6 shadow-md">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Services Offered</h3>
-                    <ul className="space-y-2">
-                      {company.services.map((service, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="text-emerald-600 mr-3">•</span>
-                          <span className="text-slate-700">{service}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
@@ -161,7 +147,7 @@ const OurCompaniesPage: React.FC = () => {
       </section>
 
       {/* Synergy Section */}
-      <section className="bg-gradient-to-r from-emerald-600 to-emerald-800 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 text-white">
+      <section className="bg-gradient-to-r from-emerald-600 to-emerald-800 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-6 text-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-8">Stronger Together</h2>
           <div className="space-y-6 text-lg leading-relaxed">

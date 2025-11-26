@@ -1,0 +1,10 @@
+<svg id="logo1-svg" width="400" height="160" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+                        <!-- THE text -->
+                        <text x="200" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="300" letter-spacing="4" fill="#c89b3c" text-anchor="middle">THE</text>
+                        
+                        <!-- F&B text -->
+                        <text x="200" y="70" font-family="Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1a1a1a" text-anchor="middle">F<tspan fill="#c89b3c">&amp;</tspan>B</text>
+                        
+                        <!-- APPRENTICE text -->
+                        <text x="200" y="110" font-family="Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1a1a1a" text-anchor="middle">APPRENTICE</text>
+                    </svg>

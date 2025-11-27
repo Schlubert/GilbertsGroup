@@ -49,7 +49,7 @@ const OurCompaniesPage: React.FC = () => {
       icon: <GraduationCap className="w-12 h-12" />,
       tagline: 'Professional Development in Food & Beverage',
       description: 'The F&B Apprentice is about building pratical and useful skills to aspiring and current food and beverage professionals, building the next generation of industry leaders, and helpgin to upskill the leaders/owners/managers of today.',
-      image: '/images/companies/fb-apprentice-hero.jpg',
+      image: '../images/companies/fb-apprentice-hero.jpg',
       overlayOpacity: 'bg-black/40',
       features: [
         'Online training videos and resources',

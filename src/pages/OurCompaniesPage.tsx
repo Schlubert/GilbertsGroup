@@ -27,7 +27,7 @@ const OurCompaniesPage: React.FC = () => {
       icon: <TrendingUp className="w-12 h-12" />,
       tagline: 'Business Advisory & Governance Excellence',
       description: 'Elevate provides strategic business advisory and governance expertise, drawing on decades of operational experience and proven leadership across industries.',
-      image: '/images/companies/elevate-hero.jpg',
+      image: 'images/companies/elevate-hero.jpg',
       overlayOpacity: 'bg-black/45',
       features: [
         '20+ years operational business experience',

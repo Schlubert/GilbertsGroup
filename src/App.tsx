@@ -15,10 +15,10 @@ function App(): React.ReactNode {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/philosophy" element={<OurPhilosophyPage />} />
-        <Route path="/companies" element={<OurCompaniesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="philosophy" element={<OurPhilosophyPage />} />
+        <Route path="companies" element={<OurCompaniesPage />} />
+        <Route path="contact" element={<ContactPage />} />
       </Routes>
     </Layout>
   );

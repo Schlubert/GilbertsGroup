@@ -1,21 +1,18 @@
-// pages/HomePage.tsx - SEO Enhanced Version
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Award, Users, Target,} from 'lucide-react';
-
-const BASE_PATH = import.meta.env.BASE_URL;
+import { ArrowRight, ExternalLink, Award, Users, Target } from 'lucide-react';
 
 const HomePage: React.FC = () => {
   const companies = [
     {
       name: 'Appetite Journeys',
-      logo: '${BASE_PATH}images/logos/appetite-journeys-logo.svg',
+      logo: `/GilbertsGroup/images/logos/appetite-journeys-logo.svg`,
       useLogo: true,
       tagline: 'Culinary Adventures Through Switzerland',
       description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by Swiss-born hosts Kevin and Esther Gilbert.',
       keyFeatures: ['Small groups (max 12)', 'Expert Swiss guides', 'Authentic experiences'],
       link: 'https://appetitejourneys.nz/',
-      image: '${BASE_PATH}images/companies/appetite-journeys-hero.jpg',
+      image: `/GilbertsGroup/images/companies/appetite-journeys-hero.jpg`,
       isExternal: true,
       status: 'Book Now',
       color: 'from-emerald-600 to-emerald-800',
@@ -23,13 +20,13 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'Elevate',
-      logo: 'images/logos/elevate-logo.svg',
+      logo: `/GilbertsGroup/images/logos/elevate-logo.svg`,
       useLogo: true,
       tagline: 'Business Advisory & Governance Excellence',
       description: 'Strategic guidance for businesses and boards in New Zealand and beyond, leveraging decades of operational experience and governance expertise.',
       keyFeatures: ['Board advisory', 'Strategic planning', 'Operational excellence'],
       link: 'https://schlubert.github.io/Elevate/',
-      image: 'images/companies/elevate-hero.jpg',
+      image: `/GilbertsGroup/images/companies/elevate-hero.jpg`,
       isExternal: true,
       status: 'Learn More',
       color: 'from-slate-700 to-slate-900',
@@ -37,24 +34,18 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'The F&B Apprentice',
-      logo: 'images/logos/fb-apprentice-logo.svg',
+      logo: `/GilbertsGroup/images/logos/fb-apprentice-logo.svg`,
       useLogo: true,
       tagline: 'Food & Beverage Professional Development',
       description: 'Comprehensive training programs for hospitality professionals in New Zealand, building the next generation of food and beverage leaders.',
       keyFeatures: ['Hands-on training', 'Industry mentorship', 'Career pathways'],
       link: 'https://schlubert.github.io/FBApprentice/',
-      image: 'images/companies/fb-apprentice-hero.jpg',
+      image: `/GilbertsGroup/images/companies/fb-apprentice-hero.jpg`,
       isExternal: true,
       status: 'Launching Soon',
       color: 'from-blue-700 to-blue-900',
       hoverColor: 'hover:from-blue-800 hover:to-blue-950'
     }
-  ];
-
-  const stats = [
-    { number: '50+', label: 'Years Combined Experience', schema: 'years' },
-    { number: '3', label: 'Business Ventures', schema: 'ventures' },
-    { number: '2', label: 'Countries Served', schema: 'countries' }
   ];
 
   const trustIndicators = [
@@ -77,7 +68,6 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      {/* Schema.org structured data for SEO */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -123,18 +113,16 @@ const HomePage: React.FC = () => {
       </script>
 
       <div className="space-y-0">
-        {/* Hero Section */}
         <section className="relative h-[45vh] -mx-4 sm:-mx-6 lg:-mx-8 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
-         <div className="relative h-full flex items-center justify-center px-4">
+          <div className="relative h-full flex items-center justify-center px-4">
             <div className="text-center text-white max-w-5xl">
-              {/* Logo/Icon placement */}
-                <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center">
                 <img
-                  src="/images/GilbertsGroupLogo.svg"
+                  src="/GilbertsGroup/images/GilbertsGroupLogo.svg"
                   alt="Gilbert's Group Logo"
                   className="max-w-[320px] w-full my-8"
                 />
-                </div>           
+              </div>           
               <p className="text-xl md:text-2xl mb-10 text-slate-200 max-w-4xl mx-auto leading-relaxed">
                 A Dunedin-based family of companies bringing decades of expertise in culinary tourism, 
                 business advisory, and hospitality professional development.
@@ -143,7 +131,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Companies Section - Enhanced with images */}
         <section id="companies" className="py-8 px-2 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -163,17 +150,15 @@ const HomePage: React.FC = () => {
                   itemScope
                   itemType="https://schema.org/Organization"
                 >
-                  {/* Image Header with Logo Overlay */}
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={company.image}
                       alt={`${company.name} - ${company.tagline}`}
-                      className="w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                       itemProp="image"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    {/* Status Badge */}
                     <div className="absolute top-4 right-4">
                       <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-slate-900">
                         {company.status}
@@ -181,16 +166,15 @@ const HomePage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Card Body */}
                   <div className="p-8">
                     {company.useLogo ? (
                       <img
                         src={company.logo}
                         alt={company.name}
-                        className="h-24 w-auto mx-auto"
+                        className="h-24 w-auto mx-auto mb-4"
                       />
                     ) : (
-                      <h2>{company.name}</h2>
+                      <h3 className="text-3xl font-bold mb-2 text-slate-900">{company.name}</h3>
                     )}
                     <p className="text-sm text-emerald-600 font-medium mb-4">
                       {company.tagline}
@@ -199,7 +183,6 @@ const HomePage: React.FC = () => {
                       {company.description}
                     </p>
                     
-                    {/* Key Features */}
                     <ul className="space-y-2 mb-6">
                       {company.keyFeatures.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm text-slate-600">
@@ -209,7 +192,6 @@ const HomePage: React.FC = () => {
                       ))}
                     </ul>
 
-                    {/* CTA Button */}
                     <a
                       href={company.link}
                       target={company.isExternal ? '_blank' : undefined}
@@ -226,7 +208,6 @@ const HomePage: React.FC = () => {
               ))}
             </div>
 
-            {/* Learn More Link */}
             <div className="text-center mt-12">
               <Link
                 to="/companies"
@@ -239,7 +220,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Trust Indicators */}
         <section className="py-4 bg-slate-50" aria-label="Why choose Gilbert's Group">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -256,7 +236,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Leadership Preview - Enhanced for SEO */}
         <section className="py-8 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -282,7 +261,7 @@ const HomePage: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span className="text-slate-700">Technical expertise combined with decades of lived experience </span>
+                    <span className="text-slate-700">Technical expertise combined with decades of lived experience</span>
                   </li>
                 </ul>
                 <Link
@@ -296,7 +275,7 @@ const HomePage: React.FC = () => {
               <div className="grid grid-cols-2 gap-6">
                 <figure className="bg-slate-100 rounded-xl p-6 text-center">
                   <img 
-                    src="/images/team/kevin.jpg" 
+                    src="/GilbertsGroup/images/team/kevin.jpg" 
                     alt="Kevin Gilbert - Founder and Director of The Gilbert's Group"
                     className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                     loading="lazy"
@@ -308,7 +287,7 @@ const HomePage: React.FC = () => {
                 </figure>
                 <figure className="bg-slate-100 rounded-xl p-6 text-center">
                   <img 
-                    src="/images/team/esther.jpg" 
+                    src="/GilbertsGroup/images/team/esther.jpg" 
                     alt="Esther Gilbert - Co-Founder and Director of The Gilbert's Group"
                     className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                     loading="lazy"
@@ -323,7 +302,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Philosophy Teaser */}
         <section className="py-16 bg-gradient-to-r from-slate-900 to-emerald-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold mb-6">Our Business Philosophy</h2>
@@ -341,7 +319,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Final CTA */}
         <section className="py-10 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready to Connect?</h2>

@@ -3,17 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, Award, Users, Target,} from 'lucide-react';
 
+const BASE_PATH = import.meta.env.BASE_URL;
+
 const HomePage: React.FC = () => {
   const companies = [
     {
       name: 'Appetite Journeys',
-      logo: '/images/logos/appetite-journeys-logo.svg',
+      logo: '${BASE_PATH}images/logos/appetite-journeys-logo.svg',
       useLogo: true,
       tagline: 'Culinary Adventures Through Switzerland',
       description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by Swiss-born hosts Kevin and Esther Gilbert.',
       keyFeatures: ['Small groups (max 12)', 'Expert Swiss guides', 'Authentic experiences'],
       link: 'https://appetitejourneys.nz/',
-      image: '/images/companies/appetite-journeys-hero.jpg',
+      image: '${BASE_PATH}images/companies/appetite-journeys-hero.jpg',
       isExternal: true,
       status: 'Book Now',
       color: 'from-emerald-600 to-emerald-800',
@@ -21,13 +23,13 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'Elevate',
-      logo: '/images/logos/elevate-logo.svg',
+      logo: 'images/logos/elevate-logo.svg',
       useLogo: true,
       tagline: 'Business Advisory & Governance Excellence',
       description: 'Strategic guidance for businesses and boards in New Zealand and beyond, leveraging decades of operational experience and governance expertise.',
       keyFeatures: ['Board advisory', 'Strategic planning', 'Operational excellence'],
       link: 'https://schlubert.github.io/Elevate/',
-      image: '/images/companies/elevate-hero.jpg',
+      image: 'images/companies/elevate-hero.jpg',
       isExternal: true,
       status: 'Learn More',
       color: 'from-slate-700 to-slate-900',
@@ -35,13 +37,13 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'The F&B Apprentice',
-      logo: '/images/logos/fb-apprentice-logo.svg',
+      logo: 'images/logos/fb-apprentice-logo.svg',
       useLogo: true,
       tagline: 'Food & Beverage Professional Development',
       description: 'Comprehensive training programs for hospitality professionals in New Zealand, building the next generation of food and beverage leaders.',
       keyFeatures: ['Hands-on training', 'Industry mentorship', 'Career pathways'],
       link: 'https://schlubert.github.io/FBApprentice/',
-      image: '/images/companies/fb-apprentice-hero.jpg',
+      image: 'images/companies/fb-apprentice-hero.jpg',
       isExternal: true,
       status: 'Launching Soon',
       color: 'from-blue-700 to-blue-900',

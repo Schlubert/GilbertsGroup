@@ -287,7 +287,7 @@ const HomePage: React.FC = () => {
                 </figure>
                 <figure className="bg-slate-100 rounded-xl p-6 text-center">
                   <img 
-                    src="/GilbertsGroup/images/team/esther.jpg" 
+                    src="images/team/esther.jpg" 
                     alt="Esther Gilbert - Co-Founder and Director of The Gilbert's Group"
                     className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                     loading="lazy"

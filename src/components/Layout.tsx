@@ -126,7 +126,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   The
                 </div>
                 <img
-                  src={"${BASE_PATH}images/gilberts-group-logo-white.svg"}
+                  src="images/GilbertsGroupLogo.svg"
                   alt="Gilbert's Group Logo"
                   className="h-10 w-auto mb-1"
                 />

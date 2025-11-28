@@ -6,13 +6,13 @@ const HomePage: React.FC = () => {
   const companies = [
     {
       name: 'Appetite Journeys',
-      logo: `/GilbertsGroup/images/logos/appetite-journeys-logo.svg`,
+      logo: `images/logos/appetite-journeys-logo.svg`,
       useLogo: true,
       tagline: 'Culinary Adventures Through Switzerland',
       description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by Swiss-born hosts Kevin and Esther Gilbert.',
       keyFeatures: ['Small groups (max 12)', 'Expert Swiss guides', 'Authentic experiences'],
       link: 'https://appetitejourneys.nz/',
-      image: `/GilbertsGroup/images/companies/appetite-journeys-hero.jpg`,
+      image: `images/companies/appetite-journeys-hero.jpg`,
       isExternal: true,
       status: 'Book Now',
       color: 'from-emerald-600 to-emerald-800',
@@ -20,13 +20,13 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'Elevate',
-      logo: `/GilbertsGroup/images/logos/elevate-logo.svg`,
+      logo: `images/logos/elevate-logo.svg`,
       useLogo: true,
       tagline: 'Business Advisory & Governance Excellence',
       description: 'Strategic guidance for businesses and boards in New Zealand and beyond, leveraging decades of operational experience and governance expertise.',
       keyFeatures: ['Board advisory', 'Strategic planning', 'Operational excellence'],
       link: 'https://schlubert.github.io/Elevate/',
-      image: `/GilbertsGroup/images/companies/elevate-hero.jpg`,
+      image: `images/companies/elevate-hero.jpg`,
       isExternal: true,
       status: 'Learn More',
       color: 'from-slate-700 to-slate-900',
@@ -34,13 +34,13 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'The F&B Apprentice',
-      logo: `/GilbertsGroup/images/logos/fb-apprentice-logo.svg`,
+      logo: `images/logos/fb-apprentice-logo.svg`,
       useLogo: true,
       tagline: 'Food & Beverage Professional Development',
       description: 'Comprehensive training programs for hospitality professionals in New Zealand, building the next generation of food and beverage leaders.',
       keyFeatures: ['Hands-on training', 'Industry mentorship', 'Career pathways'],
       link: 'https://schlubert.github.io/FBApprentice/',
-      image: `/GilbertsGroup/images/companies/fb-apprentice-hero.jpg`,
+      image: `images/companies/fb-apprentice-hero.jpg`,
       isExternal: true,
       status: 'Launching Soon',
       color: 'from-blue-700 to-blue-900',
@@ -118,7 +118,7 @@ const HomePage: React.FC = () => {
             <div className="text-center text-white max-w-5xl">
               <div className="flex flex-col items-center">
                 <img
-                  src="/GilbertsGroup/images/GilbertsGroupLogo.svg"
+                  src="images/GilbertsGroupLogo.svg"
                   alt="Gilbert's Group Logo"
                   className="max-w-[320px] w-full my-8"
                 />
@@ -275,7 +275,7 @@ const HomePage: React.FC = () => {
               <div className="grid grid-cols-2 gap-6">
                 <figure className="bg-slate-100 rounded-xl p-6 text-center">
                   <img 
-                    src="/GilbertsGroup/images/team/kevin.jpg" 
+                    src="images/team/kevin.jpg" 
                     alt="Kevin Gilbert - Founder and Director of The Gilbert's Group"
                     className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                     loading="lazy"

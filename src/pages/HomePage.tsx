@@ -34,15 +34,15 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'The F&B Apprentice',
-      logo: `images/logos/fb-apprentice-logo.svg`,
+      logo: `images/logos/GFF-logo.jpg`,
       useLogo: true,
-      tagline: 'Food & Beverage Professional Development',
-      description: 'Comprehensive training programs for hospitality professionals in New Zealand, building the next generation of food and beverage leaders.',
-      keyFeatures: ['Hands-on training', 'Industry mentorship', 'Career pathways'],
+      tagline: 'Ingredient supply and food writing',
+      description: "Gilbert's Fine Food continues to provide high-quality ingredients to the home cook and food professionals alike. With the first recipe book in production, Gilbert's Fine Food is ensuring that the legacy of culinary knowledge gets passed on to all that want to learn.",
+      keyFeatures: ['Ingredient sourcing', 'Food writing', 'Publishing'],
       link: 'https://schlubert.github.io/FBApprentice/',
       image: `images/companies/fb-apprentice-hero.jpg`,
       isExternal: true,
-      status: 'Launching Soon',
+      status: 'Find out more',
       color: 'from-blue-700 to-blue-900',
       hoverColor: 'hover:from-blue-800 hover:to-blue-950'
     }

@@ -45,10 +45,10 @@ const OurCompaniesPage: React.FC = () => {
       externalLink: true
     },
     {
-      name: 'The F&B Apprentice',
+      name: "Gilbert's Fine FOod",
       icon: <GraduationCap className="w-12 h-12" />,
-      tagline: 'Professional Development in Food & Beverage',
-      description: 'The F&B Apprentice is about building pratical and useful skills to aspiring and current food and beverage professionals, building the next generation of industry leaders, and helpgin to upskill the leaders/owners/managers of today.',
+      tagline: 'Ingredient supply and food writing',
+      description: "Gilbert's Fine Food continues to provide high-quality ingredients to the home cook and food professionals alike. With the first recipe book in production, Gilbert's Fine Food is ensuring that the legacy of culinary knowledge gets passed on to all that want to learn.",
       image: 'images/companies/fb-apprentice-hero.jpg',
       overlayOpacity: 'bg-black/40',
       features: [

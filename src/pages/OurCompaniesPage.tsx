@@ -9,7 +9,7 @@ const OurCompaniesPage: React.FC = () => {
       icon: <Compass className="w-12 h-12" />,
       tagline: 'Culinary Adventures Through Switzerland',
       description: 'Appetite Journeys offers intimate, small-group food and wine tours through Switzerland, led by Swiss-born hosts with deep local knowledge and culinary expertise.',
-      image: '/images/companies/appetite-journeys-hero.jpg',
+      image: 'images/companies/appetite-journeys-hero.jpg',
       overlayOpacity: 'bg-black/40',
       features: [
         'Maximum 12 guests per tour for personalized experiences',
@@ -49,7 +49,7 @@ const OurCompaniesPage: React.FC = () => {
       icon: <GraduationCap className="w-12 h-12" />,
       tagline: 'Professional Development in Food & Beverage',
       description: 'The F&B Apprentice is about building pratical and useful skills to aspiring and current food and beverage professionals, building the next generation of industry leaders, and helpgin to upskill the leaders/owners/managers of today.',
-      image: '../images/companies/fb-apprentice-hero.jpg',
+      image: 'images/companies/fb-apprentice-hero.jpg',
       overlayOpacity: 'bg-black/40',
       features: [
         'Online training videos and resources',

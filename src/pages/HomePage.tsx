@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
       hoverColor: 'hover:from-slate-800 hover:to-black'
     },
     {
-      name: 'The F&B Apprentice',
+      name: "Gilbert's Fine Food",
       logo: `images/logos/GFF-logo.jpg`,
       useLogo: true,
       tagline: 'Ingredient supply and food writing',

@@ -45,7 +45,7 @@ const OurCompaniesPage: React.FC = () => {
       externalLink: true
     },
     {
-      name: "Gilbert's Fine FOod",
+      name: "Gilbert's Fine Food",
       icon: <GraduationCap className="w-12 h-12" />,
       tagline: 'Ingredient supply and food writing',
       description: "Gilbert's Fine Food continues to provide high-quality ingredients to the home cook and food professionals alike. With the first recipe book in production, Gilbert's Fine Food is ensuring that the legacy of culinary knowledge gets passed on to all that want to learn.",

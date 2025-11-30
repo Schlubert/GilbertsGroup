@@ -8,6 +8,7 @@ import OurPhilosophyPage from './pages/OurPhilosophyPage';
 import OurCompaniesPage from './pages/OurCompaniesPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
+import GilbertsFineFood from './pages/gilberts-fine-food';
 
 function App(): React.ReactNode {
   return (
@@ -19,6 +20,7 @@ function App(): React.ReactNode {
         <Route path="philosophy" element={<OurPhilosophyPage />} />
         <Route path="companies" element={<OurCompaniesPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="gilberts-fine-food" element={<GilbertsFineFood  />} />
       </Routes>
     </Layout>
   );

@@ -138,7 +138,7 @@ const OurPhilosophyPage: React.FC = () => {
           </div>
 
           <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">The F&B Apprentice</h3>
+            <h3 className="text-2xl font-bold mb-4">Gilbert's Fine Food</h3>
             <p className="text-lg leading-relaxed opacity-95">
               Our industry focused initiative embodies our passion for professional development and giving back. Whether through recipes and techniques or career mentorship, we invest in the next generation of hospitality professionals with integrity and dedication.
             </p>

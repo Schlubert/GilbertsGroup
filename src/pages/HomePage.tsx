@@ -6,10 +6,10 @@ const HomePage: React.FC = () => {
   const companies = [
     {
       name: 'Appetite Journeys',
-      logo: `images/logos/appetite-journeys-logo.svg`,
+      logo: `images/logos/appetite-journeys-logo.png`,
       useLogo: true,
       tagline: 'Culinary Adventures Through Switzerland',
-      description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by Swiss-born hosts Kevin and Esther Gilbert.',
+      description: 'Intimate food and wine tours exploring Switzerland\'s finest culinary traditions, led by a Swiss-born host and culinary expert - Esther and Kevin Gilbert.',
       keyFeatures: ['Small groups (max 12)', 'Expert Swiss guides', 'Authentic experiences'],
       link: 'https://appetitejourneys.nz/',
       image: `images/companies/appetite-journeys-hero.jpg`,
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
     },
     {
       name: 'Elevate',
-      logo: `images/logos/elevate-logo.svg`,
+      logo: `images/logos/elevate-logo.png`,
       useLogo: true,
       tagline: 'Business Advisory & Governance Excellence',
       description: 'Strategic guidance for businesses and boards in New Zealand and beyond, leveraging decades of operational experience and governance expertise.',
@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
       link: 'https://schlubert.github.io/FBApprentice/',
       image: `images/companies/fb-apprentice-hero.jpg`,
       isExternal: true,
-      status: 'Find out more',
+      status: 'Find out More',
       color: 'from-blue-700 to-blue-900',
       hoverColor: 'hover:from-blue-800 hover:to-blue-950'
     }
@@ -106,7 +106,7 @@ const HomePage: React.FC = () => {
             },
             {
               "@type": "Organization",
-              "name": "The F&B Apprentice"
+              "name": "Gilbert's Fine Food"
             }
           ]
         })}
@@ -118,7 +118,7 @@ const HomePage: React.FC = () => {
             <div className="text-center text-white max-w-5xl">
               <div className="flex flex-col items-center">
                 <img
-                  src="images/GilbertsGroupLogo.svg"
+                  src="images/GG-logo.png"
                   alt="Gilbert's Group Logo"
                   className="max-w-[320px] w-full my-8"
                 />
@@ -200,7 +200,7 @@ const HomePage: React.FC = () => {
                       itemProp="url"
                       aria-label={`Visit ${company.name} website`}
                     >
-                      {company.status === 'Book Now' ? 'Visit & Book' : company.status === 'Launching Soon' ? 'Preview Site' : 'Visit Website'}
+                      {company.status === 'Book Now' ? 'Visit & Book' : company.status === 'Find out More' ? 'Go to Webpage' : 'Visit Website'}
                       <ExternalLink className="ml-2 w-5 h-5" />
                     </a>
                   </div>

@@ -68,8 +68,8 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-slate-900 mb-1">Email</h3>
-                <a href="mailto:info@gilbertsgroup.nz" className="text-emerald-600 hover:text-emerald-700">
-                  info@gilbertsgroup.nz
+                <a href="mailto:hello@gilberts.nz" className="text-emerald-600 hover:text-emerald-700">
+                  hello@gilberts.nz
                 </a>
               </div>
             </div>
@@ -110,6 +110,15 @@ const ContactPage: React.FC = () => {
                 >
                   Connect with Kevin Gilbert
                 </a>
+                <p>
+                <a 
+                  href="https://www.linkedin.com/in/esthergilbertnz/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700"
+                >
+                  Connect with Esther Gilbert
+                </a></p>
               </div>
             </div>
           </div>
@@ -131,11 +140,25 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-bold text-slate-900">Elevate</h4>
-                <p className="text-slate-600 text-sm">Coming soon</p>
+                <a 
+                  href="https://elevate.nz" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 text-sm"
+                >
+                  Elevate.nz
+                </a>
               </div>
               <div>
-                <h4 className="font-bold text-slate-900">The F&B Apprentice</h4>
-                <p className="text-slate-600 text-sm">Coming soon</p>
+                <h4 className="font-bold text-slate-900">Gilbert's Fine Food</h4>
+                <a 
+                  href="./gilberts-fine-food/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 text-sm"
+                >
+                  Vist Webpage
+                </a>
               </div>
             </div>
           </div>
@@ -221,7 +244,7 @@ const ContactPage: React.FC = () => {
                   <option value="">Select an option...</option>
                   <option value="appetite-journeys">Appetite Journeys - Culinary Tours</option>
                   <option value="elevate">Elevate - Business Advisory</option>
-                  <option value="fandblapprentice">The F&B Apprentice - Training</option>
+                  <option value="fandblapprentice">Gilbert's Fine Food</option>
                   <option value="general">General Inquiry</option>
                   <option value="partnership">Partnership Opportunities</option>
                 </select>

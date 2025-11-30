@@ -28,6 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: "About Us", path: "/about" },
     { name: "Our Companies", path: "/companies" },
     { name: "Our Philosophy", path: "/philosophy" },
+    { name: "Gilbert's Fine Food", path: "/gilberts-fine-food" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -48,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             >
               <div className="flex flex-col items-start">
                 <img
-                  src="images/GilbertsGroupLogo.svg"
+                  src="images/GG-logo.png"
                   alt="Gilbert's Group Logo"
                   className="max-w-[180px] w-full"
                 />
@@ -122,18 +123,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Company Info */}
             <div>
               <div className="flex flex-col items-start mb-4">
-                <div className="text-xs text-slate-400 font-medium tracking-wide uppercase mb-1">
-                  The
-                </div>
-                <img
-                  src="images/GilbertsGroupLogo.svg"
+               <img
+                  src="images/GG-logo.png"
                   alt="Gilbert's Group Logo"
-                  className="h-10 w-auto mb-1"
+                  className="h-16 w-auto mb-1"
                 />
-                <div className="text-xs text-emerald-400 font-medium">
-                  Excellence in Every Venture
                 </div>
-              </div>
               <p className="text-slate-400 text-sm leading-relaxed mt-4">
                 A family of companies dedicated to excellence in food,
                 hospitality, and professional development.

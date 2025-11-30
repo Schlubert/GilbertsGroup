@@ -4,7 +4,7 @@ import { Award, Users, Briefcase, Globe } from 'lucide-react';
 import { getImagePath } from './utils/paths' ;
 
 const AboutPage: React.FC = () => {
-  const milestones = [
+  {/*const milestones = [
     {
       year: '2006',
       title: "Gilbert's Fine Food Founded",
@@ -28,9 +28,10 @@ const AboutPage: React.FC = () => {
     {
       year: '2025',
       title: 'The Gilbert\'s Group',
-      description: 'Launch of parent company uniting Appetite Journeys, Elevate, and The F&B Apprentice'
+      description: 'Launch of parent company uniting Appetite Journeys, Elevate, and Gilbert's Fine Food'
     }
   ];
+  */}
 
   const expertise = [
     {
@@ -82,7 +83,7 @@ const AboutPage: React.FC = () => {
           <p className="text-xl text-slate-700 leading-relaxed mb-6"> Esther's long history developing and overseeing business systems, human resources, and customer experiences in hospitality and retail brings a thorough understanding of what is required to create a strong business structure that supports growth and excellence. 
           </p>
           <p className="text-xl text-slate-700 leading-relaxed">
-            Together, they've built a reputation for quality, integrity, and innovation—values that now unite Appetite Journeys, Elevate, and The F&B Apprentice under The Gilbert's Group umbrella.
+            Together, they've built a reputation for quality, integrity, and innovation—values that now unite Appetite Journeys, Elevate, and Gilbert's Fine Food under The Gilbert's Group umbrella.
           </p>
         </div>
       </section>
@@ -93,28 +94,7 @@ const AboutPage: React.FC = () => {
           <h2 className="text-4xl font-bold text-center text-slate-900 mb-12">Meet the Founders</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Kevin */}
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <img
-              src={getImagePath('team/kevin.jpg')} 
-              alt="Kevin Gilbert"
-              className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg mb-6" />
-              <h3 className="text-3xl font-bold text-center text-slate-900 mb-2">Kevin Gilbert</h3>
-              <p className="text-center text-emerald-600 font-semibold mb-6">Founder & Director</p>
-              
-              <div className="space-y-4 text-slate-700">
-                <p className="leading-relaxed">
-                  Kevin has spent his life immersed in business management with a focus on food service, hospitality, and professional development. From his early days as a baker and chef to owning and operating Gilbert's Fine Food for over 20 years, Kevin has honed his skills in delivering quality and excellence.
-                </p>
-                <p className="leading-relaxed">
-                  Beyond business ownership, Kevin has held significant leadership roles including President of Baking New Zealand and Dunedin City Councillor. His expertise in governance, strategic planning, and community engagement informs the vision and direction of The Gilbert's Group.
-                </p>
-                <p className="leading-relaxed">
-                  He understands the complexity and pressures of running successful businesses and is passionate about sharing his knowledge to help others thrive.
-                </p>
-              </div>
-            </div>
-
+            
             {/* Esther */}
             <div className="bg-white rounded-xl p-8 shadow-lg">
               <img
@@ -133,6 +113,27 @@ const AboutPage: React.FC = () => {
                 </p>
                 <p className="leading-relaxed">
                   Her ability with languages (she speaks four) and cross-cultural communication means that she can connect with a diverse range of clients and partners, further strengthening the group's global perspective.
+                </p>
+              </div>
+            </div>
+            {/* Kevin */}
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <img
+              src={getImagePath('team/kevin.jpg')} 
+              alt="Kevin Gilbert"
+              className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg mb-6" />
+              <h3 className="text-3xl font-bold text-center text-slate-900 mb-2">Kevin Gilbert</h3>
+              <p className="text-center text-emerald-600 font-semibold mb-6">Co-Founder & Director</p>
+              
+              <div className="space-y-4 text-slate-700">
+                <p className="leading-relaxed">
+                  Kevin has spent his life immersed in business management with a focus on food service, hospitality, and professional development. From his early days as a baker and chef to owning and operating Gilbert's Fine Food for over 20 years, Kevin has honed his skills in delivering quality and excellence.
+                </p>
+                <p className="leading-relaxed">
+                  Beyond business ownership, Kevin has held significant leadership roles including President of Baking New Zealand and Dunedin City Councillor. His expertise in governance, strategic planning, and community engagement informs the vision and direction of The Gilbert's Group.
+                </p>
+                <p className="leading-relaxed">
+                  He understands the complexity and pressures of running successful businesses and is passionate about sharing his knowledge to help others thrive.
                 </p>
               </div>
             </div>
@@ -167,21 +168,22 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Timeline */}
+      {/*
       <section className="bg-slate-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-slate-900 mb-12">Our Journey</h2>
           
           <div className="relative">
-            {/* Timeline line */}
+            {/* Timeline line
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-emerald-600 md:left-1/2"></div>
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  {/* Timeline dot */}
+                  {/* Timeline dot 
                   <div className="absolute left-8 w-4 h-4 bg-emerald-600 rounded-full md:left-1/2 md:-ml-2 z-10"></div>
                   
-                  {/* Content */}
+                  {/* Content 
                   <div className={`ml-16 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
                     <div className="bg-white rounded-lg p-6 shadow-md">
                       <div className="text-emerald-600 font-bold text-2xl mb-2">{milestone.year}</div>
@@ -191,10 +193,11 @@ const AboutPage: React.FC = () => {
                   </div>
                 </div>
               ))}
+                
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 };

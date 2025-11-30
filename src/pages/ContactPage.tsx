@@ -152,7 +152,7 @@ const ContactPage: React.FC = () => {
               <div>
                 <h4 className="font-bold text-slate-900">Gilbert's Fine Food</h4>
                 <a 
-                  href="./gilberts-fine-food/" 
+                  href="/gilberts-fine-food/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-emerald-600 hover:text-emerald-700 text-sm"

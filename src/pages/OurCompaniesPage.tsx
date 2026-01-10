@@ -43,7 +43,7 @@ const OurCompaniesPage: React.FC = () => {
         'Operational efficiency consulting',
         'Financial management guidance',
       ],
-      link: 'https://schlubert.github.io/Elevate/',
+      link: 'https://www.elevates.nz/',
       externalLink: true,
     },
     {

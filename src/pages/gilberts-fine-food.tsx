@@ -93,11 +93,11 @@ const GilbertsFineFood: React.FC = () => {
         <div className="relative h-full flex items-center justify-center px-4">
           <div className="text-center text-white max-w-4xl">
             <img 
-              src="../images/logos/GFF-logo.png" 
+              src="/images/logos/GFF-logo.png" 
               alt="Gilbert's Fine Food logo"
               className="h-32 mx-auto mb-4 drop-shadow-2xl"
             />
-            <h1 className="text-5xl md:text-5xl font-bold mb-4">Quuality Ingredients for Passionate Bakers & Cooks</h1>
+            <h1 className="text-5xl md:text-5xl font-bold mb-4">Quality Ingredients for Passionate Bakers & Cooks</h1>
             <p className="text-xl md:text-2xl mb-8 text-slate-200">
               Sourcing premium ingredients from across the country and around the world for home cooks and food professionals
             </p>

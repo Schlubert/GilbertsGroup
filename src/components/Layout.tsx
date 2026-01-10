@@ -49,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             >
               <div className="flex flex-col items-start">
                 <img
-                  src="images/GG-logo.png"
+                  src="/images/GG-logo.png"
                   alt="Gilbert's Group Logo"
                   className="max-w-[180px] w-full"
                 />
